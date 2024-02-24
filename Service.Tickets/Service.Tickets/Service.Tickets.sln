@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Tickets", "Service.Tickets\Service.Tickets.csproj", "{8287F8B0-7B04-4AFA-9DE8-5106DEED04A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Tickets.Models", "Service.Tickets.Models\Service.Tickets.Models.csproj", "{1CF08E5B-FCDA-4630-B165-A17D722E35E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8287F8B0-7B04-4AFA-9DE8-5106DEED04A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8287F8B0-7B04-4AFA-9DE8-5106DEED04A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8287F8B0-7B04-4AFA-9DE8-5106DEED04A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8287F8B0-7B04-4AFA-9DE8-5106DEED04A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CF08E5B-FCDA-4630-B165-A17D722E35E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CF08E5B-FCDA-4630-B165-A17D722E35E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CF08E5B-FCDA-4630-B165-A17D722E35E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CF08E5B-FCDA-4630-B165-A17D722E35E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DE24104-A083-4E87-8B37-2EAB0185BBDA}
+	EndGlobalSection
+EndGlobal
