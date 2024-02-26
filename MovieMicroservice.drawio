@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-26T21:56:23.773Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="nu9ckgN5QXfcAaylNnCc" version="23.1.6" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2024-02-26T23:03:56.131Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="fser1sm3SSPOJYgS6yrb" version="23.1.6" type="github" pages="4">
   <diagram name="First Draft" id="Zm0rnuicwyV9nDr5d28L">
     <mxGraphModel dx="906" dy="515" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -705,9 +705,6 @@
           <mxGeometry x="-0.0244" y="3" relative="1" as="geometry">
             <mxPoint x="-11" y="3" as="offset" />
           </mxGeometry>
-        </mxCell>
-        <mxCell id="i1JdlQArp1qs0zq3B72S-1" value="What a mess of events..." style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="520" y="80" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
