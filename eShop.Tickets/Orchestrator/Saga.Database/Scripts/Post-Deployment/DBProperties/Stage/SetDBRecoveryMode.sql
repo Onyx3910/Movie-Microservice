@@ -1,0 +1,3 @@
+﻿USE master
+
+ALTER DATABASE [Audit] SET RECOVERY FULL

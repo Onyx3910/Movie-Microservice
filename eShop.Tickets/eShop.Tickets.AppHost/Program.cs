@@ -8,6 +8,4 @@ builder.AddProject<Projects.eShop_Tickets_Web>("webfrontend")
     .WithReference(cache)
     .WithReference(apiService);
 
-builder.AddProject<Projects.Audit_Api>("audit.api");
-
 builder.Build().Run();
