@@ -32,7 +32,7 @@ namespace eShop.Tickets.Orchestrator
 
                         config.SetKebabCaseEndpointNameFormatter();
 
-                        config.AddSagaStateMachine<TicketStateMachine, TicketState>()
+                        config.AddSagaStateMachine<TicketOrderStateMachine, TicketOrderState>()
                             .EntityFrameworkRepository(repository =>
                             {
                                 repository.ConcurrencyMode = ConcurrencyMode.Pessimistic;

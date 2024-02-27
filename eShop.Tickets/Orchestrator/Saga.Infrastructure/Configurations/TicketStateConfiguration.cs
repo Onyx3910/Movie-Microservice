@@ -5,15 +5,15 @@ using Saga.Domain.Entities;
 
 namespace Saga.Infrastructure.Configurations
 {
-    public partial class TicketStateConfiguration : IEntityTypeConfiguration<TicketState>
+    public partial class TicketStateConfiguration : IEntityTypeConfiguration<TicketOrderState>
     {
-        public void Configure(EntityTypeBuilder<TicketState> entity)
+        public void Configure(EntityTypeBuilder<TicketOrderState> entity)
         {
             entity.Property(e => e.CorrelationId).ValueGeneratedNever();
 
             OnConfigurePartial(entity);
         }
 
-        partial void OnConfigurePartial(EntityTypeBuilder<TicketState> entity);
+        partial void OnConfigurePartial(EntityTypeBuilder<TicketOrderState> entity);
     }
 }

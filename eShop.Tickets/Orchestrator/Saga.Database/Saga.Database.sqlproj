@@ -63,7 +63,7 @@
     <Folder Include="Scripts\Post-Deployment\DBProperties\Stage" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\TicketState.sql" />
+    <Build Include="dbo\TicketOrderState.sql" />
     <None Include="Scripts\Post-Deployment\DBProperties\Stage\GrantExecute_Read_Write.sql" />
     <None Include="Scripts\Post-Deployment\DBProperties\Stage\SetDBRecoveryMode.sql" />
   </ItemGroup>
@@ -81,6 +81,6 @@
     </SqlCmdVariable>
   </ItemGroup>
   <ItemGroup>
-    <None Include="StageDatabase.publish.publish.xml" />
+    <None Include="StageDatabase.publish.xml" />
   </ItemGroup>
 </Project>

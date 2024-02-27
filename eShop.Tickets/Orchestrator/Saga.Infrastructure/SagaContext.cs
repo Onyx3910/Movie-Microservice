@@ -15,7 +15,7 @@ public partial class SagaContext : SagaDbContext
     {
     }
 
-    public virtual DbSet<TicketState> TicketStates { get; set; }
+    public virtual DbSet<TicketOrderState> TicketStates { get; set; }
 
     protected override IEnumerable<ISagaClassMap> Configurations
     {

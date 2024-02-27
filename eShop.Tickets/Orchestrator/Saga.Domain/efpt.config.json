@@ -7,7 +7,7 @@
    "IncludeConnectionString": false,
    "ModelNamespace": null,
    "OutputContextPath": null,
-   "OutputPath": "Models",
+   "OutputPath": "Entities",
    "PreserveCasingWithRegex": true,
    "ProjectRootNamespace": "Saga.Domain",
    "Schemas": null,
@@ -16,7 +16,7 @@
    "T4TemplatePath": null,
    "Tables": [
       {
-         "Name": "[dbo].[TicketState]",
+         "Name": "[dbo].[TicketOrderState]",
          "ObjectType": 0
       }
    ],
