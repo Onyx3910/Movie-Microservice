@@ -63,6 +63,16 @@ namespace eShop.Tickets.Orchestrator.Tests
         }
 
         [TestMethod]
+        public async Task OrderCancelledEvent_ShouldTransitionTo_CompletedState()
+        {
+            await SeatsSelectedEvent_ShouldTransitionTo_WaitingOnPaymentState();
+
+            var message = new TicketOrderCancelled(CorrelationId, DateTime.Now);
+
+            await TestThatEventLeadsToFinalization(message);
+        }
+
+        [TestMethod]
         public async Task PaymentRejectedEvent_ShouldTransitionTo_WaitingOnPaymentState()
         {
             await PaymentSubmittedEvent_ShouldTransitionTo_ProcessingPaymentState();
@@ -79,13 +89,7 @@ namespace eShop.Tickets.Orchestrator.Tests
 
             var message = new TicketOrderPaymentAccepted(CorrelationId, DateTime.Now);
 
-            await Harness.Bus.Publish(message);
-            await Task.Delay(250);
-            Assert.IsTrue(await Harness.Consumed.Any<TicketOrderPaymentAccepted>());
-            var sagaHarness = Harness.GetSagaStateMachineHarness<TicketOrderStateMachine, TicketOrderState>();
-            Assert.IsTrue(await sagaHarness.Consumed.Any<TicketOrderPaymentAccepted>());
-            Assert.IsTrue(await sagaHarness.Created.Any(saga => saga.CorrelationId == CorrelationId));
-            Assert.IsFalse(await sagaHarness.Sagas.Any(saga => saga.CorrelationId == CorrelationId));
+            await TestThatEventLeadsToFinalization<TicketOrderPaymentAccepted>(message);
         }
     }
 }

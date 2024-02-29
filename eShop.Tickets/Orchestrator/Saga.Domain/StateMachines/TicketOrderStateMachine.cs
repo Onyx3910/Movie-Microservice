@@ -63,6 +63,8 @@ namespace Saga.Domain.StateMachines
 
         #endregion
 
+        #region Events
+
         public Event<TicketOrderCreated> TicketOrderCreatedEvent { get; private set; }
         public Event<TicketOrderSeatsSelected> TicketOrderSeatsSelectedEvent { get; private set; }
         public Event<TicketOrderPaymentSubmitted> TicketOrderPaymentSubmittedEvent { get; private set; }
@@ -70,6 +72,8 @@ namespace Saga.Domain.StateMachines
         public Event<TicketOrderSeatsExpired> TicketOrderSeatsExpiredEvent { get; private set; }
         public Event<TicketOrderCancelled> TicketOrderCancelledEvent { get; private set; }
         public Event<TicketOrderPaymentRejected> TicketOrderPaymentRejectedEvent { get; private set; }
+
+        #endregion
 
         private void InitializeState(BehaviorContext<TicketOrderState, TicketOrderCreated> context)
         {

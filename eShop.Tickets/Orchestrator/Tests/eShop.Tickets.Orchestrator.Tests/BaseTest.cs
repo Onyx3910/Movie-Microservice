@@ -2,8 +2,9 @@
 using MassTransit.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using Saga.Domain.Entities;
-using Saga.Domain.Events;
 using Saga.Domain.StateMachines;
+using static MassTransit.Transports.ReceiveEndpoint;
+using State = MassTransit.State;
 
 #nullable disable
 
@@ -44,9 +45,19 @@ namespace eShop.Tickets.Orchestrator.Tests
             await Harness.Bus.Publish(message);
             await Task.Delay(250);
             await DidHarnessReceive<TEvent>();
-            var sagaHarness = await DidSagaReceive<TicketOrderCreated>(correlationId);
+            var sagaHarness = await DidSagaReceive<TEvent>(correlationId);
             IsSagaInState(sagaHarness, state.Invoke(sagaHarness.StateMachine), correlationId);
             await IsSagaWithIdInState(sagaHarness, correlationId, state);
+        }
+
+        protected async Task TestThatEventLeadsToFinalization<TEvent>(TEvent message) where TEvent : class
+        {
+            await Harness.Bus.Publish(message);
+            await Task.Delay(250);
+            await DidHarnessReceive<TEvent>();
+            var sagaHarness = await DidSagaReceive<TEvent>(CorrelationId);
+            var notExistsId = await sagaHarness.NotExists(CorrelationId);
+            Assert.IsFalse(notExistsId.HasValue);
         }
 
         [TestInitialize]
