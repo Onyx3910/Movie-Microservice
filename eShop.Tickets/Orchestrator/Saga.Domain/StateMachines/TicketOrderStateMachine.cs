@@ -39,12 +39,12 @@ namespace Saga.Domain.StateMachines
                         .TransitionTo(TicketOrderSelectingSeatsState),
                 When(TicketOrderPaymentSubmittedEvent)
                     .Then(UpdateStateWithPaymentSubmitted)
-                        .TransitionTo(TicketOrderPaymentSubmittedState),
+                        .TransitionTo(TicketOrderProcessingPaymentState),
                 When(TicketOrderCancelledEvent)
                     .Then(UpdateStateWithCancelled)
                         .Finalize());
 
-            During(TicketOrderPaymentSubmittedState,
+            During(TicketOrderProcessingPaymentState,
                 When(TicketOrderPaymentRejectedEvent)
                     .Then(UpdateStateWithPaymentRejected)
                         .TransitionTo(TicketOrderWaitingOnPaymentState),
@@ -59,7 +59,7 @@ namespace Saga.Domain.StateMachines
 
         public State TicketOrderSelectingSeatsState { get; private set; }
         public State TicketOrderWaitingOnPaymentState { get; private set; }
-        public State TicketOrderPaymentSubmittedState { get; private set; }
+        public State TicketOrderProcessingPaymentState { get; private set; }
 
         #endregion
 

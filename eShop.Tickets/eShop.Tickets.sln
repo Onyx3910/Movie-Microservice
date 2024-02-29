@@ -28,6 +28,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saga.Domain", "Orchestrator
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Tickets.Domain", "eShop.Tickets.Domain\eShop.Tickets.Domain.csproj", "{CA868324-6A95-4FE5-BCB8-72461B934852}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{538E4625-A939-4D9C-97EE-44A20457BF28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop.Tickets.Orchestrator.Tests", "Orchestrator\Tests\eShop.Tickets.Orchestrator.Tests\eShop.Tickets.Orchestrator.Tests.csproj", "{CE30D2E3-62BE-4429-8BEB-29260738552A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +90,10 @@ Global
 		{CA868324-6A95-4FE5-BCB8-72461B934852}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA868324-6A95-4FE5-BCB8-72461B934852}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA868324-6A95-4FE5-BCB8-72461B934852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE30D2E3-62BE-4429-8BEB-29260738552A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE30D2E3-62BE-4429-8BEB-29260738552A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE30D2E3-62BE-4429-8BEB-29260738552A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE30D2E3-62BE-4429-8BEB-29260738552A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,6 +103,8 @@ Global
 		{81074CE0-2CCD-4159-8B49-308ADD6153FD} = {87D61FA5-5420-46F8-B58E-152874F6631B}
 		{2A16710E-61D5-4FA7-BCE7-53D7CA1FDB78} = {87D61FA5-5420-46F8-B58E-152874F6631B}
 		{6A89E507-60C6-4AA5-B5AA-723D38933B7E} = {87D61FA5-5420-46F8-B58E-152874F6631B}
+		{538E4625-A939-4D9C-97EE-44A20457BF28} = {87D61FA5-5420-46F8-B58E-152874F6631B}
+		{CE30D2E3-62BE-4429-8BEB-29260738552A} = {538E4625-A939-4D9C-97EE-44A20457BF28}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F8385D3-A025-4DEB-8AD3-AE6422007B79}
