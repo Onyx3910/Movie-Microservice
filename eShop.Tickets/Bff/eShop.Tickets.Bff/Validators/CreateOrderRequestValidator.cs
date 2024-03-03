@@ -11,7 +11,7 @@ namespace eShop.Tickets.Bff.Validators
             RuleFor(x => x.MovieId).NotEmpty();
             RuleFor(x => x.ShowTime)
                 .NotEmpty()
-                .;
+                .GreaterThan(DateTime.Now);
         }
     }
 }

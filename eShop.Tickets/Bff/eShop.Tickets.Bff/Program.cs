@@ -1,3 +1,5 @@
+using eShop.Tickets.Bff.SchemaFilters;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
@@ -7,7 +9,10 @@ builder.AddServiceDefaults();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SchemaFilter<SwaggerFluentValidatorSchemaFilter>();
+});
 
 var app = builder.Build();
 

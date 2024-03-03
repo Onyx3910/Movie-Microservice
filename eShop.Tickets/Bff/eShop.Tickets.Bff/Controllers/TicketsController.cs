@@ -8,9 +8,10 @@ namespace eShop.Tickets.Bff.Controllers
     public class TicketsController : Controller
     {
         [HttpPost]
-        public async Task CreateOrder(CreateOrderRequest request)
+        public async Task<IActionResult> CreateOrder(CreateOrderRequest request)
         {
-
+            await Task.FromResult(0);
+            return Ok();
         }
     }
 }
