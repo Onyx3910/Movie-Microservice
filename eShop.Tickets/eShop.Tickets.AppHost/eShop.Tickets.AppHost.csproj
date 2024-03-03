@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Bff\eShop.Tickets.Bff\eShop.Tickets.Bff.csproj" />
     <ProjectReference Include="..\eShop.Tickets.ApiService\eShop.Tickets.ApiService.csproj" />
     <ProjectReference Include="..\eShop.Tickets.Web\eShop.Tickets.Web.csproj" />
   </ItemGroup>
