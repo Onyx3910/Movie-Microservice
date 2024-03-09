@@ -11,8 +11,8 @@ namespace eShop.Tickets.Bff.SchemaFilters
     public class SwaggerFluentValidatorSchemaFilter : ISchemaFilter
     {
         public SwaggerFluentValidatorSchemaFilter() 
-        { 
-            Validators = Assembly.GetEntryAssembly()?.GetTypes().Where(type => type.IsAbstract && type.IsGenericType && type.GetGenericTypeDefinition() == typeof(AbstractValidator<>));
+        {
+            Validators = Assembly.GetEntryAssembly()?.GetTypes().Where(type => type.BaseType.IsGenericType && type.BaseType.GetGenericTypeDefinition() == typeof(AbstractValidator<>));
         }
 
         protected IEnumerable<Type> Validators { get; private set; }
@@ -28,13 +28,16 @@ namespace eShop.Tickets.Bff.SchemaFilters
                 {
                     foreach (var property in properties)
                     {
+                        var pascalProperty = ToPascalCase(property.Key);
                         var validatorInstance = (IValidator)Activator.CreateInstance(validator);
-                        var propertyValidators = validatorInstance.CreateDescriptor().GetValidatorsForMember(property.Key);
+                        var propertyValidators = validatorInstance.CreateDescriptor().GetValidatorsForMember(pascalProperty);
                         foreach (var propertyValidator in propertyValidators)
                         {
-                            if (propertyValidator.GetType().GetGenericTypeDefinition() == typeof(NotNullValidator<,>))
+                            if (propertyValidator.GetType().GetGenericTypeDefinition() == typeof(NotEmptyValidator<,>))
                             {
                                 property.Value.Nullable = false;
+                                property.Value.Required = new HashSet<string> { "true" };
+                                property.Value.MinLength = 1;
                             }
                             //if (propertyValidator.GetType().GetGenericTypeDefinition() == typeof(LengthValidator<>))
                             //{
@@ -50,6 +53,17 @@ namespace eShop.Tickets.Bff.SchemaFilters
                     }
                 }
             }
+        }
+
+        // Create a method that will convert a string to pascal case
+        private static string ToPascalCase(string value)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                return value;
+            }
+
+            return string.Concat(value[..1].ToUpper(), value.AsSpan(1));
         }
     }
 }
